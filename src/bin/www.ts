@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import {Container} from 'typedi';
 import {createConnection, useContainer} from 'typeorm';
 import {config} from '../config';
-import {BaseEntity, Question} from '../entities';
+import {BaseEntity, Question, User} from '../entities';
 import {app} from './app';
 
 useContainer(Container);
@@ -12,7 +12,8 @@ createConnection({
   ...config.sql,
   entities: [
     BaseEntity,
-    Question
+    Question,
+    User
   ]
 }).then(
   () => http

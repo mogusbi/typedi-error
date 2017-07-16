@@ -10,6 +10,7 @@
   "author": "Mo Gusbi",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
@@ -24,6 +25,7 @@
     "typeorm-typedi-extensions": "0.0.12"
   },
   "devDependencies": {
+    "@types/bcrypt": "^1.0.0",
     "@types/body-parser": "^1.16.4",
     "@types/express": "^4.0.36",
     "@types/helmet": "0.0.35",

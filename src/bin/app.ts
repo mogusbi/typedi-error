@@ -2,8 +2,11 @@ import {urlencoded} from 'body-parser';
 import * as express from 'express';
 import * as helmet from 'helmet';
 import * as morgan from 'morgan';
-import {useExpressServer} from 'routing-controllers';
-import {QuestionController} from '../controllers';
+import {useContainer, useExpressServer} from 'routing-controllers';
+import {Container} from 'typedi';
+import {QuestionController, UserController} from '../controllers';
+
+useContainer(Container);
 
 const config: express.Application = express();
 
@@ -16,7 +19,8 @@ config
 
 const app: express.Application = useExpressServer(config, {
   controllers: [
-    QuestionController
+    QuestionController,
+    UserController
   ],
   routePrefix: '/api/1.0'
 });
